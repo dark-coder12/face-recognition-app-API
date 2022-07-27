@@ -14,7 +14,7 @@ const handleApiCall = (req, res) => {
  	.catch(err => res.status(400).json('unable to work with API'))
 }
 
-const imageHandle = (req, res, db) => {
+const handleImage = (req, res, db) => {
 
 	const { id } = req.body;
 	
@@ -26,15 +26,12 @@ const imageHandle = (req, res, db) => {
 	})
 	.catch(err => res.status(400).json('404 - Not Found'));
 
-});
+};
 
-app.listen(3001, () => {
 
-	console.log('App is running on Port 3001');
-}
 
 module.exports = {
 
-	handleImage: handleImage;
-	handleApiCall: handleApiCall;
+	handleImage,
+	handleApiCall
 }
